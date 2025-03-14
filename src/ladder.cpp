@@ -9,18 +9,17 @@ void error(string word1, string word2, string msg) {
 }
 
 bool edit_distance_within(const std::string& str1, const std::string& str2, int d) {
-    return false;
-    // int counter = 0;
-    // int len1 = str1.length();
-    // int len2 = str2.length();
-    // int length = min(len1, len2);
-    // for (int i = 0; i < length; i++) {
-    //     if (str1[i] != str2[i]) {
-    //         counter++;
-    //     }
-    // }
-    // counter += abs(len1-len2);
-    // return (counter <= d);
+    int counter = 0;
+    int len1 = str1.length();
+    int len2 = str2.length();
+    int length = min(len1, len2);
+    for (int i = 0; i < length; i++) {
+        if (str1[i] != str2[i]) {
+            counter++;
+        }
+    }
+    counter += abs(len1-len2);
+    return (counter <= d);
 }
 
 bool is_adjacent(const string& word1, const string& word2) {
@@ -33,22 +32,22 @@ bool is_adjacent(const string& word1, const string& word2) {
         }
         return (counter <= 1);
     }
-    string long = "";
-    string short = "";
+    string longer = "";
+    string shorter = "";
     if (abs(word1.length() - word2.length()) == 1) {
         if (word1.length() > word2.length()) {
-            long = word1;
-            short = word2;
+            longer = word1;
+            shorter = word2;
         } else {
-            long = word2;
-            short = word1;
+            longer = word2;
+            shorter = word1;
         }
 
         int i = 0;
         int j = 0;
         bool diff = false;
-        while (i < long.length() && j < short.length()) {
-            if (long[i] != short[j]) {
+        while (i < longer.length() && j < shorter.length()) {
+            if (longer[i] != shorter[j]) {
                 if (diff) {
                     return false;
                 }
