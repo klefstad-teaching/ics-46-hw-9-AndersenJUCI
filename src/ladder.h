@@ -6,6 +6,8 @@
 #include <vector>
 #include <string>
 #include <cmath>
+#include <algorithm>
+#include <stack>
 
 using namespace std;
 
