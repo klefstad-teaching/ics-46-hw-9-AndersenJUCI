@@ -46,7 +46,7 @@ void print_path(const vector<int>& v, int total) {
         cout << v[i] << " ";
     }
     cout << endl;
-    cout << "Total Cost Is " << total << endl;
+    cout << "Total cost is " << total << endl;
 }
 
 string get_arg(int argc, char *argv[], string def) {
