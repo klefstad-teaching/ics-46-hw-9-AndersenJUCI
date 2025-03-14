@@ -34,7 +34,7 @@ bool is_adjacent(const string& word1, const string& word2) {
     }
     string longer = "";
     string shorter = "";
-    if (abs(word1.length() - word2.length()) == 1) {
+    if (abs(static_cast<int>(word1.length()) - static_cast<int>(word2.length())) == 1) {
         if (word1.length() > word2.length()) {
             longer = word1;
             shorter = word2;
